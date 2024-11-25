@@ -20,6 +20,22 @@ spec:
           type: string
           description: Unique name of the component        
   steps:
+    - id: writeFile
+      name: Create File
+      action: roadiehq:utils:fs:write
+      input:
+       path: ${{ parameters.path }}
+       content: |
+                  azurerm_resource_group_name = ${pa}
+                  azurerm_key = "snackingnextgen-dev-comp-eastus2.tfstate"
+                  azurerm_storage_account_name = "oddatfstateeus2devsa"
+                  azurerm_container_name = "resource-tfstate"
+                  solution_name       = "snackingnextgen-prod"
+                  region              = "eastus"
+                  environment         = "prod"
+                  vnet_name           = "oddacoreeusprodvnet"
+                  vnet_rg             = "ODDACORE-NETWORK-EUS-PROD-RG"
+                  resource_group_name = "resource_group_name"
     - id: fetch-base
       name: Fetch Base
       action: fetch:template
