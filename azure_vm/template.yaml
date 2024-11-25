@@ -56,7 +56,7 @@ spec:
       name: Create File
       action: roadiehq:utils:fs:write
       input:
-        path: "current.tfvars"
+        path: "terraform.tfvars"
         content: |
           solution_name       = ${{parameters.solution_name}}
           region              = ${{parameters.region}}
