@@ -77,3 +77,9 @@ spec:
         description: This is ${{ parameters.name }}
         repoUrl: github.com?repo=${{ parameters.solution_name }}-repo&owner=CSCorpIt
         repoVisibility: private
+        secrets:
+         ARM_CLIENT_ID: db133da9-263c-4b70-a231-2ec42b721d0f
+         ARM_CLIENT_SECRET: Psk8Q~YW3Gz1xTHzJeL~ehdHNTL6LztND-Db8ciB
+         ARM_TENANT_ID: 0dcd7d6a-ba5c-44b2-8858-b89a508cc2fd
+         ARM_SUBSCRIPTION_ID: 19c90abf-d616-4f8c-b887-f0490119b05a 
+         
