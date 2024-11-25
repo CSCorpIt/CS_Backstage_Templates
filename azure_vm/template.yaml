@@ -51,25 +51,19 @@ spec:
           type: string
           description: The name of the resource group to create or use.
 
-
-
   steps:
     - id: writeFile
       name: Create File
       action: roadiehq:utils:fs:write
       input:
-       path: "current.tfvars"
-       content: |
-                  azurerm_resource_group_name = ${pa}
-                  azurerm_key = "snackingnextgen-dev-comp-eastus2.tfstate"
-                  azurerm_storage_account_name = "oddatfstateeus2devsa"
-                  azurerm_container_name = "resource-tfstate"
-                  solution_name       = "snackingnextgen-prod"
-                  region              = "eastus"
-                  environment         = "prod"
-                  vnet_name           = "oddacoreeusprodvnet"
-                  vnet_rg             = "ODDACORE-NETWORK-EUS-PROD-RG"
-                  resource_group_name = "resource_group_name"
+        path: "current.tfvars"
+        content: |
+          solution_name       = ${parameters.solution_name}
+          region              = ${parameters.region}
+          environment         = ${parameters.environment}
+          vnet_name           = ${parameters.vnet_name}
+          vnet_rg             = ${parameters.vnet_rg}
+          resource_group_name = ${parameters.resource_group_name}
     - id: fetch-base
       name: Fetch Base
       action: fetch:template
@@ -79,13 +73,7 @@ spec:
       name: Publish
       action: publish:github
       input:
-        allowedHosts: ['github.com']
+        allowedHosts: ["github.com"]
         description: This is ${{ parameters.name }}
-        repoUrl:  github.com?repo=${{ parameters.solution_name }}-repo&owner=CSCorpIt
+        repoUrl: github.com?repo=${{ parameters.solution_name }}-repo&owner=CSCorpIt
         repoVisibility: public
-    - id: register
-      name: Register
-      action: catalog:register
-      input:
-        repoContentsUrl: ${{ steps['publish'].output.repoContentsUrl }}
-        catalogInfoPath: '/catalog-info.yaml'
