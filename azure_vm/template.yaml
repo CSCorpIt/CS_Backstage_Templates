@@ -82,6 +82,7 @@ spec:
         allowedHosts: ['github.com']
         description: This is ${{ parameters.name }}
         repoUrl:  github.com?repo=${{ parameters.solution_name }}-repo&owner=CSCorpIt
+        repoVisibility: public
     - id: register
       name: Register
       action: catalog:register
