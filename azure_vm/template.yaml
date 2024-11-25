@@ -58,7 +58,7 @@ spec:
       name: Create File
       action: roadiehq:utils:fs:write
       input:
-       path: ${{ parameters.path }}
+       path: "current.tfvars"
        content: |
                   azurerm_resource_group_name = ${pa}
                   azurerm_key = "snackingnextgen-dev-comp-eastus2.tfstate"
