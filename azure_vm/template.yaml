@@ -81,7 +81,7 @@ spec:
       input:
         allowedHosts: ['github.com']
         description: This is ${{ parameters.name }}
-        repoUrl: ${{ parameters.repoUrl }}
+        repoUrl: ${{ parameters.solution_name }}-repo
     - id: register
       name: Register
       action: catalog:register
