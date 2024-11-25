@@ -77,9 +77,3 @@ spec:
         description: This is ${{ parameters.name }}
         repoUrl: github.com?repo=${{ parameters.solution_name }}-repo&owner=CSCorpIt
         repoVisibility: public
-    - id: register
-      name: Register
-      action: catalog:register
-      input:
-       repoContentsUrl: ${{ steps['publish'].output.repoContentsUrl }}
-       catalogInfoPath: "/catalog-info.yaml"
