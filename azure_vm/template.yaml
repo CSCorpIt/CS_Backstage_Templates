@@ -58,12 +58,12 @@ spec:
       input:
         path: "current.tfvars"
         content: |
-          solution_name       = ${parameters.solution_name}
-          region              = ${parameters.region}
-          environment         = ${parameters.environment}
-          vnet_name           = ${parameters.vnet_name}
-          vnet_rg             = ${parameters.vnet_rg}
-          resource_group_name = ${parameters.resource_group_name}
+          solution_name       = ${{parameters.solution_name}}
+          region              = ${{parameters.region}}
+          environment         = ${{parameters.environment}}
+          vnet_name           = ${{parameters.vnet_name}}
+          vnet_rg             = ${{parameters.vnet_rg}}
+          resource_group_name = ${{parameters.resource_group_name}}
     - id: fetch-base
       name: Fetch Base
       action: fetch:template
