@@ -11,14 +11,48 @@ spec:
   type: service
 
   parameters:
-    - title: Virtual Machine Name
+    - title: "General Settings"
       required:
-        - name
+        - solution_name
+        - region
+        - environment
       properties:
-        name:
-          title: Name
+        solution_name:
+          title: Solution Name
           type: string
-          description: Unique name of the component        
+          description: The name of the solution or project.
+        region:
+          title: Region
+          type: string
+          description: Azure region for deployment (e.g., eastus2).
+        environment:
+          title: Environment
+          type: string
+          description: The deployment environment (e.g., dev, staging, prod).
+    - title: "Network Settings"
+      required:
+        - vnet_name
+        - vnet_rg
+      properties:
+        vnet_name:
+          title: Virtual Network Name
+          type: string
+          description: The name of the virtual network to use.
+        vnet_rg:
+          title: Virtual Network Resource Group
+          type: string
+          description: The resource group for the virtual network.
+    - title: Resource Group Settings
+      required:
+        - resource_group_name
+      properties:
+        resource_group_name:
+          title: Resource Group Name
+          type: string
+          description: The name of the resource group to create or use.
+
+
+
   steps:
     - id: writeFile
       name: Create File
