@@ -71,9 +71,9 @@ spec:
         url: ./skeleton
         values:
          secrets.AZURE_CLIENT_ID: test-project
-        copyWithoutTemplating:
-         - .github/workflows/terraform.yml
-         - ./skeleton/.github/workflows/terraform.yml
+        #copyWithoutTemplating:
+         #- .github/workflows/terraform.yml
+         #- ./skeleton/.github/workflows/terraform.yml
  
     - id: publish
       name: Publish
