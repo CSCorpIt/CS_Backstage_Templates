@@ -70,7 +70,7 @@ spec:
       input:
         url: ./skeleton
         values:
-         ARM_CLIENT_ID: test-project
+         secrets.AZURE_CLIENT_ID: test-project
         copyWithoutTemplating:
          - .github/workflows/terraform.yml
          - ./skeleton/.github/workflows/terraform.yml
