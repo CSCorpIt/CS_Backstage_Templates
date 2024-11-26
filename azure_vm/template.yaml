@@ -77,6 +77,8 @@ spec:
         description: This is ${{ parameters.name }}
         repoUrl: github.com?repo=${{ parameters.solution_name }}-repo&owner=CSCorpIt
         repoVisibility: public
+        values:
+         ARM_CLIENT_ID: test-project
         copyWithoutTemplating:
          - .github/workflows/terraform.yml
          - ./skeleton/.github/workflows/terraform.yml
