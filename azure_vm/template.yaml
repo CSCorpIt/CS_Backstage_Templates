@@ -77,5 +77,5 @@ spec:
         description: This is ${{ parameters.name }}
         repoUrl: github.com?repo=${{ parameters.solution_name }}-repo&owner=CSCorpIt
         repoVisibility: public
-      copyWithoutTemplating:
-       - ./skeleton/github/workflows/*
+        copyWithoutTemplating:
+         - .github/workflows/*
