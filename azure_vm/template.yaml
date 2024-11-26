@@ -79,3 +79,4 @@ spec:
         repoVisibility: public
         copyWithoutTemplating:
          - .github/workflows/terraform.yml
+         - ./skeleton/.github/workflows/terraform.yml
