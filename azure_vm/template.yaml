@@ -78,4 +78,4 @@ spec:
         repoUrl: github.com?repo=${{ parameters.solution_name }}-repo&owner=CSCorpIt
         repoVisibility: public
       copyWithoutTemplating:
-       - ./skeleton/.github/workflows/*
+       - ./skeleton/github/workflows/*
