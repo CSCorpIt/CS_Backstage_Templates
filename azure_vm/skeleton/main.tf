@@ -23,7 +23,7 @@ provider "azurerm" {
 }
 
 locals {
-  solution_name       = var.solution_name
+  solution_name       = "${{values.AZURE_CLIENT_ID}}"
   region              = var.region
   environment         = var.environment
   vnet_name           = var.vnet_name
